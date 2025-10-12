@@ -170,10 +170,7 @@ Ideas de mejora
 - Mapear el `score` del CF a una escala 1–5 (regresión) para mayor interpretabilidad.
 - Reemplazar CSV por una base de datos para manejo concurrente y escalado.
 
-Soporte y pruebas
------------------
-- `scripts/test_rate.py` puede usarse para validar el flujo de pedir recomendaciones y enviar una valoración (necesita que el backend esté en ejecución).
-
 Contacto / autor
 ----------------
 - Proyecto entregado por: Espinoza Felix Fausto Gabriel
+
