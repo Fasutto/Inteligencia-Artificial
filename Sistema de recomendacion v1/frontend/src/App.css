@@ -1,0 +1,51 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #121212; color: #fff; }
+.App { text-align: center; }
+.App-header { background-color: #282c34; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: calc(10px + 2vmin); color: white; }
+.search-box { margin: 20px; }
+input { padding: 10px; font-size: 16px; width: 300px; margin-right: 10px; }
+button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+.error-message { color: #ff6b6b; }
+.recommendations-list ul { list-style-type: none; padding: 0; }
+.recommendations-list li { background-color: #444; margin: 5px 0; padding: 10px; border-radius: 5px; }
+
+.suggestions-list { position: absolute; top: 46px; left: 0; right: 0; background: #222; border: 1px solid #333; max-height: 200px; overflow: auto; z-index: 50; list-style: none; padding: 0; margin: 0; }
+.suggestions-list li { padding: 8px 10px; cursor: pointer; border-bottom: 1px solid #333; }
+.suggestions-list li:hover { background: #333; }
+.suggestions-list li.active { background: #555; }
+
+.loader {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border: 2px solid rgba(255,255,255,0.2);
+	border-top-color: #fff;
+	border-radius: 50%;
+	animation: spin 0.8s linear infinite;
+	margin-left: 8px;
+}
+
+@keyframes spin {
+	to { transform: rotate(360deg); }
+}
+
+.recommendations-loading { margin-top: 10px; }
+
+/* Contenedor de la tabla de películas valoradas */
+.rated-table-wrapper {
+	width: 90%;
+	max-width: 900px;
+	margin: 10px auto;
+	border: 1px solid #333;
+	border-radius: 6px;
+	overflow: hidden;
+}
+.rated-table-wrapper tbody { display: block; }
+.rated-table { width: 100%; border-collapse: collapse; }
+.rated-table thead { background: #1f1f1f; display: table; width: 100%; table-layout: fixed; }
+.rated-table tbody { display: block; max-height: calc(10 * 48px); /* ~10 rows of 48px */ overflow-y: auto; width: 100%; }
+.rated-table th, .rated-table td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #2b2b2b; }
+.rated-table tr { display: table; width: 100%; table-layout: fixed; }
+
+.recommendations-table { width: 90%; max-width: 900px; margin: 12px auto; border-collapse: collapse; }
+.recommendations-table th, .recommendations-table td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #2b2b2b; }
+.recommendations-table thead { background: #1f1f1f; }
