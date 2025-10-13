@@ -120,5 +120,8 @@ Archivos esenciales
 
 - `scripts/run.ps1` y `scripts/run.bat` — scripts de arranque (moved a `scripts/`).
 
-- Integrante:
-Espinoza Felix Fausto Gabriel
+
+Contacto / autor
+----------------
+- Proyecto entregado por: Espinoza Felix Fausto Gabriel
+
