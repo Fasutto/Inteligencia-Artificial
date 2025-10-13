@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recomendador — Restaurante</title>
+    <style>
+      :root{--bg:#f7f8fb;--card:#ffffff;--muted:#6b7280;--accent:#0ea5a4}
+      html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+      body{background:var(--bg);display:flex;align-items:flex-start;justify-content:center;padding:32px}
+      .container{width:880px;max-width:95%}
+      header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+      h1{margin:0;font-size:20px}
+      p.lead{margin:0;color:var(--muted);font-size:13px}
+      .grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+      .card{background:var(--card);border-radius:10px;padding:18px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+      label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+      select,input[type=text]{width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px}
+      .row{display:flex;gap:10px}
+      .muted{color:var(--muted);font-size:13px}
+      button{background:var(--accent);color:white;border:0;padding:10px 12px;border-radius:8px;cursor:pointer}
+      .small{font-size:13px}
+      #results .dish{padding:12px;border-radius:8px;border:1px solid #eef2f7;margin-bottom:10px}
+      .footer-note{font-size:12px;color:var(--muted);margin-top:8px}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div>
+          <h1>Recomendador de Menú</h1>
+        </div>
+      </header>
+
+      <div class="grid" style="grid-template-columns:1fr 1fr;align-items:start;">
+        <!-- Left: select existing client (Sección 1) -->
+        <div class="card">
+          <div style="margin-bottom:12px">
+            <label>Cliente (selecciona existente)</label>
+            <select id="clientSelect"></select>
+          </div>
+
+          <div id="clientDetails" style="margin-bottom:12px;padding:8px;border-radius:8px;background:#fbfcfd;border:1px solid #f0f4f6">
+            <div style="font-size:14px;font-weight:600" id="cd_name">Nombre: —</div>
+            <div class="muted small">Preferencia: <span id="cd_pref">—</span></div>
+            <div class="muted small">Restricción: <span id="cd_restr">—</span></div>
+            <div class="muted small">Alergias: <span id="cd_allergies">—</span></div>
+          </div>
+
+          <div style="display:flex;gap:10px;margin-top:8px">
+            <button id="recoBtn">Obtener Recomendaciones</button>
+          </div>
+          
+        </div>
+
+        <!-- Right: create new client (Sección 2) -->
+        <div class="card">
+          <div id="createArea">
+            <div style="margin-bottom:8px">
+              <label>Crear / Guardar Cliente</label>
+              <input type="text" id="newName" placeholder="Nombre del cliente" />
+            </div>
+            <div style="margin-bottom:8px">
+              <label>Preferencia</label>
+              <select id="newPref">
+                <option>Carnívoro</option>
+                <option>Vegetariano</option>
+                <option>Vegano</option>
+              </select>
+            </div>
+            <div style="margin-bottom:8px">
+              <label>Restricción</label>
+              <select id="newRestr">
+                <option>Ninguna</option>
+                <option>Sin Gluten</option>
+              </select>
+            </div>
+            <div style="margin-bottom:8px">
+              <label>Alergias (separadas por coma)</label>
+              <input type="text" id="newAllergies" placeholder="p. ej. Queso, Aguacate" />
+            </div>
+            <div style="display:flex;gap:8px">
+              <button id="saveClientBtn">Guardar Cliente</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección 3: Resultados (debe mostrarse debajo de las secciones superiores) -->
+      <div style="margin-top:18px">
+        <div class="card">
+          <h3 id="resultsTitle" style="margin:0 0 8px 0">Resultados</h3>
+          <div id="results" style="max-height:420px;overflow:auto;padding-right:8px"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/main.js?v=2"></script>
+  </body>
+</html>
