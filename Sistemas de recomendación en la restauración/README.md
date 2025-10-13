@@ -117,4 +117,8 @@ Archivos esenciales
 - `backend/static/index.html` y `backend/static/main.js` — frontend.
 - `backend/recommender.db` — base de datos SQLite utilizada en runtime (si existe).
 - `requirements.txt` — dependencias.
+
 - `scripts/run.ps1` y `scripts/run.bat` — scripts de arranque (moved a `scripts/`).
+
+- Integrante:
+Espinoza Felix Fausto Gabriel
